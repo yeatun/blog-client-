@@ -11,9 +11,9 @@ import BlogDetails from './Components/Home/BlogDetails/BlogDetails';
 import Login from './Components/Home/Login/Login';
 import { createContext, useState } from 'react';
 import BlogPost from './Components/Home/BlogPost/BlogPost';
-
 import PrivateRoute from './Components/Home/Login/PrivateRoute';
 import AddNewAdmin from './Components/Home/AddNewAdmin/AddNewAdmin';
+import AdminLogin from './Components/Home/Login/AdminLogin';
 
 export const UserContext = createContext();
 
@@ -26,18 +26,23 @@ function App() {
          <Route exact path ="/">
          <Blog></Blog>
          </Route>
+         <Route  path ="/blog">
+         <Blog></Blog>
+         </Route>
          <PrivateRoute path="/blogDetails/:_id">
             <BlogDetails></BlogDetails>
            </PrivateRoute>
            <PrivateRoute path="/admin">
             <AddNewAdmin></AddNewAdmin>
            </PrivateRoute>
-         
          <PrivateRoute path ="/blogPost">
          <BlogPost></BlogPost>
-      </PrivateRoute>
+         </PrivateRoute>
            <Route  path ="/login">
            <Login></Login>
+         </Route>
+         <Route  path ="/adminLogin">
+           <AdminLogin></AdminLogin>
          </Route>
        </Switch>
      </Router>

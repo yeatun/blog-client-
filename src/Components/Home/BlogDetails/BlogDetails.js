@@ -30,6 +30,7 @@ const BlogDetails = () => {
            <img style={{height: '100px'}} className="img-fluid mb-3" src= {blogList?.imageURL} alt=""/>
            <h1>{blogList?.Title}</h1>
            <p className='text-secondary'>{blogList?.Post}</p>
+           <p className='text-secondary'>{blogList?.Details}</p>
          
          
            </div>

@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { UserContext } from '../../../App';
-
+import './Navbar.css'
 
 const Navbar = () => {
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);
@@ -17,7 +17,7 @@ const Navbar = () => {
 }, [])
     return (
       
-        <div>
+        <div className='navar-container'>
           <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
              <nav class="navbar navbar-expand-lg navbar-light  text-white">
   <div class="container-fluid">
@@ -33,23 +33,29 @@ const Navbar = () => {
    </ul>
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
      
-        <li class="nav-item">
-          <a class="nav-link ms-5 active text-brand" aria-current="page" href="/">Home</a>
+        {/* <li class="nav-item">
+          <a class="nav-link ms-5 active text-brand" aria-current="page" href="/blog">Home</a>
+        </li> */}
+         <li class="nav-item">
+          <Link class="nav-link ms-5 text-brand " to="/blog">Home</Link>
         </li>
-       
+        <li class="nav-item">
+          <Link class="nav-link ms-5 text-brand " to="/adminLogin">Admin Login</Link>
+        </li>
+        {isAdmin &&    <div>
         <li class="nav-item">
           <Link class="nav-link ms-5 text-brand " to="/blogPost">blog post</Link>
         </li>
-       
-        <li class="nav-item">
+        </div>}
+        {/* <li class="nav-item">
           <Link class="nav-link ms-5 text-brand " to="/admin">Make Admin</Link>
-        </li>
-        {/* {isAdmin &&    <div>
+        </li> */}
+        {isAdmin &&    <div>
        <li class="nav-item">
           <Link class="nav-link ms-5 text-brand " to="/admin">Make Admin</Link>
         </li>
       
-       </div>} */}
+       </div>}
        
         <li class="nav-item">
           <Link class="nav-link ms-5 text-brand " to="/login">login</Link>

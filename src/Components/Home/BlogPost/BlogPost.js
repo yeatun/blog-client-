@@ -13,6 +13,7 @@ const BlogPost = () => {
        
        Title:data.Title,
         Post:data.Post,
+        Details: data.Details,
         imageURL: imageURL
       };
       const url = `http://localhost:5000/addPost`;
@@ -59,6 +60,11 @@ const BlogPost = () => {
                         <label htmlFor="exampleInputPassword1">Post</label>
                         <br/>
                         <input name="Post" type="text" {...register("Post")}  placeholder='Post' className="form-control" />
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="exampleInputPassword1">Details</label>
+                        <br/>
+                        <input name="Details" type="text" {...register("Details")}  placeholder='Details' className="form-control" />
                     </div>
                   
                     <div className="form-group">
