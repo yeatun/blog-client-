@@ -6,7 +6,7 @@ import StoriesInfo from '../StoriesInfo/StoriesInfo';
 const Stories = () => {
     const [newPosts, setNewPosts] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/newPost')
+        fetch('https://sleepy-bayou-04521.herokuapp.com/newPost')
         .then(res => res.json())
         .then(data => setNewPosts(data))
     }, [])

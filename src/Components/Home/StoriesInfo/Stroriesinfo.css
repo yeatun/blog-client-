@@ -1,5 +1,20 @@
-.stories{
-   color: black;
+.blogs img {
+    width: 60%;
+    margin-top: 30px;
+    transition: 0.9s;
+  }
   
-
-}
+  .blogs img:hover {
+    margin-top: 150px;
+    /* box-shadow: 10px 10px 20px gray; */
+    border-radius: 5px;
+  }
+  .blogs:hover {
+    box-shadow: 10px 10px 20px rgb(224, 161, 161);
+    border-radius: 10px;
+    padding: 10px;
+  }
+  .blog-content {
+  
+    background-color: rgb(228, 226, 224);
+  }

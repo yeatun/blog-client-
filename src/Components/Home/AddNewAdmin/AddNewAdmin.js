@@ -15,7 +15,7 @@ const AddNewAdmin = () => {
              
            };
 
-        const url = `http://localhost:5000/addAdmin`;
+        const url = `https://sleepy-bayou-04521.herokuapp.com/addAdmin`;
       
         fetch(url, {
             method: 'POST',

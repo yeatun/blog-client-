@@ -16,7 +16,7 @@ const BlogPost = () => {
         Details: data.Details,
         imageURL: imageURL
       };
-      const url = `http://localhost:5000/addPost`;
+      const url = `https://sleepy-bayou-04521.herokuapp.com/addPost`;
     
       fetch(url, {
         method: 'POST', 

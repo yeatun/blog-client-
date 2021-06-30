@@ -17,7 +17,7 @@ const AdminLogin = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    fetch("http://localhost:5000/adminLogin", {
+    fetch("https://sleepy-bayou-04521.herokuapp.com/adminLogin", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),

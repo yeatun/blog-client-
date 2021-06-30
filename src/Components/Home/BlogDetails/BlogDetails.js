@@ -14,7 +14,7 @@ const BlogDetails = () => {
     const [blog ,setBlog] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/newService')
+        fetch('https://sleepy-bayou-04521.herokuapp.com/newService')
         .then(res => res.json())
         .then(data => setBlog(data))
     }, [])
