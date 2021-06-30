@@ -1,37 +1,10 @@
 import React, { } from 'react';
 import { useForm } from 'react-hook-form';
-
+import Navbar from '../Navbar/Navbar';
 
 const AddNewAdmin = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
-    // const [info, setInfo] = useState({});
-    // const [file, setFile] = useState(null);
-    // const handleBlur = e => {
-    //     const newInfo = { ...info };
-    //     newInfo[e.target.name] = e.target.value;
-    //     setInfo(newInfo);
-    // }
-
-  
-
-    // const handleSubmit = () => {
-    //     const formData = new FormData()
-    //     console.log(info);
-    //    console.log(formData);
-    //     formData.append('email', info.email);
-
-    //     fetch('http://localhost:5000/addAdmin', {
-    //         method: 'POST',
-    //         body: formData
-    //     })
-    //         .then(response => response.json())
-    //         .then(data => {
-    //             console.log(data)
-    //         })
-    //         .catch(error => {
-    //             console.error(error)
-    //         })
-    // }
+    
     const onSubmit = data => {
         console.log(data.email);
         const email = {
@@ -51,12 +24,12 @@ const AddNewAdmin = () => {
             },
             body: JSON.stringify(email)
         })
-        .then(res =>console.log('server side response', res))
+        .then(res =>alert('admin created!!',res))
       };
 
     return (
-        <section className="container-fluid row">
-            
+        <section className="container-fluid ">
+            <div ><Navbar></Navbar></div>
             <div className="col-md-10 p-4 pr-5" style={{ position: "absolute", right: 0, backgroundColor: "#F4FDFB" }}>
             <form  onSubmit={handleSubmit(onSubmit)}>
                     <div className="form-group">

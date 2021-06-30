@@ -19,7 +19,7 @@ const Stories = () => {
              
                
             </div>
-            <div className=" row mt-5  pt-5">
+            <div className=" row  ">
                  {
                      newPosts.map(newPost => <StoriesInfo newPost={newPost} key={newPost.id}/>)
                  }

@@ -1,7 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { UserContext } from '../../../App';
-import './Stroriesinfo.css'
+import './Stroriesinfo.css';
+import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 const StoriesInfo = ({newPost}) => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const [isAdmin, setIsAdmin] = useState(false);
@@ -26,17 +28,21 @@ const StoriesInfo = ({newPost}) => {
         })
 }
     return (
-        <div className='stories col-md-3 shadow text-center ' style={{ height: "70vh" }}>
-       <img style={{width: '200px'}} src={newPost.imageURL} alt="" />
+        <div className='stories col-md-3  ' >
+     <div className ="border">
+     <img style={{width: '200px'}} src={newPost.imageURL} alt="" />
          <h5 className="text-dark text-center">{newPost.Title}</h5>
         <p className="text-dark text-center">{newPost.Post}</p>
-            <div>
-         <Link  to={`/blogDetails/${newPost._id}`} className='btn btn-dark'>see more</Link> 
+          <div className='row '>
+          <div  className='text-center p-2'>
+         <Link  to={`/blogDetails/${newPost._id}`} className='btn btn-dark '>see more</Link> 
           </div>
         
-         {isAdmin &&    <div>
-         <button className="btn btn-primary" onClick={() => handleDelete(newPost._id)}>Delete</button>
+         {isAdmin &&    <div className='text-center'>
+         <button className="btn btn-danger " onClick={() => handleDelete(newPost._id)}><FontAwesomeIcon icon={faTrashAlt} /></button>
          </div>}
+          </div>
+     </div>
     </div>
     );
 };

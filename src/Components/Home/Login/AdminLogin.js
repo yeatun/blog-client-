@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 // import "./AdminLogin.css";
-import { useHistory, location } from "react-router-dom";
+import { useHistory} from "react-router-dom";
 import { UserContext } from "../../../App";
 import Navbar from "../Navbar/Navbar";
 
@@ -43,11 +43,11 @@ const AdminLogin = () => {
   const handleOnClick = () => history.push("/blog");
 
   return (
-    <div className="login-page container">
+    <div className="container-fluid container">
         <div>
         <Navbar></Navbar>
         </div>
-      <div className="col-md-6 shadow p-5">
+      <div className="col-md-8 shadow m-5 p-5">
       <h3 className="text-dark">Admin Login</h3>
       <form onSubmit={handleSubmit(onSubmit)}>
         {error && <p style={{ color: "red" }}>Invalid Email or Password !</p>}

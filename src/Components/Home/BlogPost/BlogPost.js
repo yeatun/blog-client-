@@ -25,7 +25,7 @@ const BlogPost = () => {
         },
         body: JSON.stringify(addPost)
       })
-      .then(res => console.log('server side response', res))
+      .then(res => alert('blog successfully posted',res))
     };
   const handleImageUpload= event =>{
     console.log(event.target.files[0])
